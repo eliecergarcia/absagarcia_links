@@ -17,7 +17,7 @@ import instagram from '../assets/instagram.png';
 import youtube from '../assets/Youtube.png';
 import tiktok from '../assets/tiktok.png';
 
-const inter = Inter({ subsets: ['latin'] })
+// const inter = Inter({ subsets: ['latin'] })
 
 interface ISocialMedia {
   link: string,
