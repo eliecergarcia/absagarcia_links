@@ -59,15 +59,13 @@ const Home: NextPage = () => {
 
   return (
     <Container
-      gap={4}
-      responsive={true}
-      justify='center'
-      alignContent='center'
-      alignItems='center'
-
+      fluid={true}
+      responsive
+      gap={0}
     >
-      <Row justify='center' align='center'>
-        <Col span={8} >
+      <Row justify='center' align='center' fluid gap={1}>
+        <Col span={2}/>
+        <Col style={{ width: 330 }}>
           <Spacer />
           <User
             src={myImage.src}
@@ -102,7 +100,9 @@ const Home: NextPage = () => {
               </Card.Body>
             </Card>
           ))}
+
         </Col>
+        <Col span={2}/>
       </Row>
     </Container>
   )
