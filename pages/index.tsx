@@ -74,8 +74,9 @@ const Home: NextPage = () => {
             size="xl"
           />
           <Spacer />
-          {socialMedia.map((socialMedia: ISocialMedia) => (
+          {socialMedia.map((socialMedia: ISocialMedia, i: number) => (
             <Card
+              key={i}
               isPressable
               isHoverable
               variant="bordered"
@@ -85,6 +86,7 @@ const Home: NextPage = () => {
                 <Row justify='center' align='center'>
                   <Col span={4}>
                     <Image
+                      alt={socialMedia.socialName}
                       width={50}
                       height={50}
                       src={getIconMedia(socialMedia.socialName)!}
