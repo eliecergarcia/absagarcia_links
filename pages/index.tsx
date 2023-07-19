@@ -62,9 +62,16 @@ const Home: NextPage = () => {
       fluid={true}
       responsive
       gap={0}
+      style={{ backgroundColor: 'black' }}
     >
-      <Row justify='center' align='center' fluid gap={1}>
-        <Col span={2}/>
+      <Row
+        justify='center'
+        align='center'
+        fluid
+        style={{ backgroundColor: 'black' }}
+        gap={1}
+      >
+        <Col span={2} />
         <Col style={{ width: 330 }}>
           <Spacer />
           <User
@@ -102,7 +109,7 @@ const Home: NextPage = () => {
           ))}
 
         </Col>
-        <Col span={2}/>
+        <Col span={2} />
       </Row>
     </Container>
   )
