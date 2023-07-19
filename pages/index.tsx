@@ -8,9 +8,14 @@ import {
   Row,
   Col,
   Spacer,
-  Link
+  Link,
+  Image
 } from '@nextui-org/react'
 import myImage from '../assets/IMG_9071.jpg';
+import spotify from '../assets/spotify.png';
+import instagram from '../assets/instagram.png';
+import youtube from '../assets/Youtube.png';
+import tiktok from '../assets/tiktok.png';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -39,14 +44,26 @@ const Home: NextPage = () => {
     },
   ];
 
+  const getIconMedia = (social: string) => {
+    switch (social) {
+      case 'YouTube':
+        return youtube.src;
+      case 'Tiktok':
+        return tiktok.src;
+      case 'Café con Absa':
+        return spotify.src;
+      case 'Instagram':
+        return instagram.src;
+    }
+  }
+
   return (
-    < Container
-      gap={2}
+    <Container
+      gap={4}
       responsive={true}
       justify='center'
       alignContent='center'
       alignItems='center'
-
     >
       <Row gap={0} justify='center'>
         <Col span={12}>
@@ -57,21 +74,31 @@ const Home: NextPage = () => {
             size="xl"
           />
           <Spacer />
-          {
-            socialMedia.map((socialMedia: ISocialMedia) => {
-              return (
-                <Card
-                  isPressable
-                  isHoverable
-                  variant="bordered"
-                  css={{ mw: "300px", margin: '0 0 20px 0' }}>
-                  <Card.Body>
-                    <Link href={socialMedia.link}>  <Text h4>{socialMedia.socialName}</Text></Link>
-                  </Card.Body>
-                </Card>
-              );
-            })
-          }
+          {socialMedia.map((socialMedia: ISocialMedia) => (
+            <Card
+              isPressable
+              isHoverable
+              variant="bordered"
+              css={{ mw: "300px", margin: '0 0 20px 0' }}
+            >
+              <Card.Body>
+                <Row justify='center' align='center'>
+                  <Col span={4}>
+                    <Image
+                      width={50}
+                      height={50}
+                      src={getIconMedia(socialMedia.socialName)!}
+                    />
+                  </Col>
+                  <Col span={12}>
+                    <Link href={socialMedia.link} style={{ textAlign: 'left' }}>
+                      <Text h4 style={{ margin: 0 }}>{socialMedia.socialName}</Text>
+                    </Link>
+                  </Col>
+                </Row>
+              </Card.Body>
+            </Card>
+          ))}
         </Col>
       </Row>
     </Container>
