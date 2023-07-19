@@ -64,9 +64,10 @@ const Home: NextPage = () => {
       justify='center'
       alignContent='center'
       alignItems='center'
+
     >
-      <Row gap={0} justify='center'>
-        <Col span={12}>
+      <Row justify='center' align='center'>
+        <Col span={8} >
           <Spacer />
           <User
             src={myImage.src}
